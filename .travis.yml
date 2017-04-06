@@ -16,5 +16,8 @@ before_script:
   - sleep 10
   - adb shell input keyevent 82
 
+after_success:
+  - ./gradlew crashlyticsUploadDistributionDebug
+
 notifications:
   slack: conference-chat:DQcat3B9Vt23OHqy8ZVUh7Qw
