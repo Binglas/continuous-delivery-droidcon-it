@@ -17,7 +17,8 @@ before_script:
   - adb shell input keyevent 82
 
 after_success:
-  - ./gradlew crashlyticsUploadDistributionDebug
+  - ./gradlew
+  - bash <(curl -s https://codecov.io/bash)
 
 notifications:
   slack: conference-chat:DQcat3B9Vt23OHqy8ZVUh7Qw
