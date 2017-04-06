@@ -2,6 +2,7 @@ package com.training.binglas.continuousintegrationdroidcon;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
 import android.support.test.rule.ActivityTestRule;
@@ -15,12 +16,11 @@ import org.junit.Test;
 public class MainActivityTest {
 
   @Rule
-  public ActivityTestRule<MainActivity> rule = new
-      ActivityTestRule < MainActivity > (MainActivity.class);
+  public ActivityTestRule<MainActivity> rule = new ActivityTestRule <MainActivity> (MainActivity.class);
 
   @Test
   public void showHelloWorld() {
-    onView(withText("Hello world!")).check(matches(withText(R.string.hello)));
+    onView(withId(R.id.hello)).check(matches(withText(R.string.hello)));
 
   }
 }
